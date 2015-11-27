@@ -9,13 +9,17 @@ a {
   a:hover {
     color: #2d574e; }
 
+.right {
+  text-align: right; }
+
 .container {
   max-width: 65rem;
   margin: 100px auto 0;
   background: white;
   min-height: calc(100vh - 100px);
   padding: 0.9735rem; }
-  .container :before {
+  .container:before {
+    content: "";
     width: 100vw;
     z-index: -1;
     height: 200px;
@@ -27,9 +31,60 @@ a {
 .tweets {
   border: 1px solid #2b292a;
   padding: 0.9735rem;
-  margin: 0;
+  margin: 0 0 0.9735rem;
   background: #f1f1f1; }
   .tweets .tweet {
     list-style: none;
     border-bottom: 1px solid #2b292a;
-    padding-bottom: 0.9735rem; }
+    padding-bottom: 0.9735rem;
+    margin-bottom: 0.9735rem; }
+    .tweets .tweet:last-of-type {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0; }
+    .tweets .tweet .username, .tweets .tweet .message {
+      float: left;
+      display: block;
+      width: calc(100% - 165px); }
+    .tweets .tweet .username {
+      padding-bottom: 0.48675rem;
+      position: relative; }
+      .tweets .tweet .username:after {
+        content: "";
+        display: block;
+        background: #18406b;
+        width: 35px;
+        height: 1px;
+        position: absolute;
+        bottom: 0.243375rem;
+        left: 0; }
+    .tweets .tweet .message {
+      font-size: 0.875rem;
+      word-wrap: break-word; }
+    .tweets .tweet .tweet-data {
+      width: 150px;
+      float: right;
+      background: #18406b;
+      color: white;
+      text-align: center;
+      padding: 0.9735rem;
+      height: 100%; }
+      .tweets .tweet .tweet-data .loc {
+        padding: 5px;
+        background: white;
+        border-radius: 2px;
+        font-weight: 600;
+        color: #18406b;
+        margin-bottom: 10px; }
+        .tweets .tweet .tweet-data .loc .flag-icon {
+          margin-right: 10px; }
+      .tweets .tweet .tweet-data .dateTime .day, .tweets .tweet .tweet-data .dateTime .month, .tweets .tweet .tweet-data .dateTime .time {
+        display: block; }
+      .tweets .tweet .tweet-data .dateTime .day {
+        font-size: 2rem;
+        font-weight: 600;
+        line-height: 1; }
+    .tweets .tweet:after {
+      content: "";
+      clear: both;
+      display: table; }
