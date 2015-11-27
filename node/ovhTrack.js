@@ -1,5 +1,6 @@
 var Twitter = require('twitter');
 var mysql = require('mysql');
+var sentiment = require('sentiment');
 var consumer_key = "j22ImSSl5UX0uocLVMeDA", // API key
  consumer_secret = "R8lfNWlGxzwhWEbbcoGqJfyTa7v7VezZZtl7Ks", // API secret
  access_token = "1957461038-OmPdXkTLJ1C4xk2asA0faG2DRZtmA1WRGMOEwge",
@@ -33,10 +34,11 @@ connection.connect();
 function insertTweetToMysql(tweet) {
     var customDateUnix = Date.parse(tweet.created_at);
     var customDate = new Date(customDateUnix);
+    var sentimentResult = sentiment(tweet.text);
     var allValues = {
         Source: "Twitter",
         Text: tweet.text,
-        Tone: 1,
+        Tone: sentimentResult.score,
         User: tweet.user.screen_name,
         Time: customDate.toISOString(),
         Location: tweet.location,
