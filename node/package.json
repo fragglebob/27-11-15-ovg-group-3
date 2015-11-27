@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "facebook-search": "^0.1.1",
+    "http": "0.0.0",
     "node-twitter": "0.5.0",
     "oauth": "0.9.x",
     "redis": "^2.4.1",

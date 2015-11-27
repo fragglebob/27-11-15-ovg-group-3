@@ -1,4 +1,5 @@
 var Twitter = require('twitter');
+var http = require('http');
 var mysql = require('mysql');
 var sentiment = require('sentiment');
 var consumer_key = "j22ImSSl5UX0uocLVMeDA", // API key
@@ -179,6 +180,7 @@ function storeTrendingWord(tonedWord, positive) {
                           console.log("It was err 2");
                           console.log(err);
                       } else {
+                          sendPushnotif();
                           console.log("Updated trend!");
                       }
                     });
@@ -191,6 +193,7 @@ function storeTrendingWord(tonedWord, positive) {
                       console.log("It was err 3");
                       console.log(err);
                   } else {
+                      sendPushnotif();
                       console.log("Inserted trend!");
                   }
                 });
@@ -198,5 +201,91 @@ function storeTrendingWord(tonedWord, positive) {
           }
       }
     });
-    console.log(originalSql.sql);    
+    console.log(originalSql.sql);
+}
+
+
+
+function sendPushnotif() {
+    getRegIds(function(ids){
+                           
+        var dataGCM = {
+          "collapseKey":"applice",
+          "delayWhileIdle":true,
+          "timeToLive":3,
+          "data":{
+            "message":"My message","title":"My Title"
+            },
+          "registration_ids": ids
+        };
+
+        var dataString =  JSON.stringify(dataGCM);
+        var headers = {
+          'Authorization' : 'key=AIzaSyCO14rpRsoP3y3NnJI684WpIt7xB3ibXQ4',
+          'Content-Type' : 'application/json',
+          'Content-Length' : dataString.length
+        };
+
+        var options = {
+          host: 'android.googleapis.com',
+          path: '/gcm/send',
+          method: 'POST',
+          headers: headers
+        };
+
+        //Setup the request 
+        var req = http.request(options, function(res) {
+
+
+          res.setEncoding('utf-8');
+
+          var responseString = '';
+
+          res.on('data', function(data) {
+              console.log("data responseeeeeeeeee");
+              console.log(data);
+              if(data.STATUS) {
+                  console.log("data.STATUS");
+                  console.log(data.STATUS);
+              }
+            responseString += data;
+          });
+
+          res.on('end', function() {
+            var resultObject = JSON.parse(responseString);
+        //    print(responseString);
+            console.log(resultObject);
+          });
+          console.log('STATUS: ' + res.statusCode);
+          console.log('HEADERS: ' + JSON.stringify(res.headers));
+
+        });
+
+        req.on('error', function(e) {
+          // TODO: handle error.
+          console.log('error : ' + e.message + e.code);
+        });
+
+        req.write(dataString);
+        req.end();
+    });
+}
+
+function getRegIds(callback) {
+    var returnResults = [];
+    var mysqlQuery = 'SELECT * FROM Registrations';
+    var originalSql = connection.query(mysqlQuery, function(errOne, results) {
+      if (errOne) {
+          console.log("It was errone");
+          console.log(errOne);
+      } else {
+          if(results.length > 0) {
+              for(var i = 0; i < results.length; i++) {
+                  returnResults.push(results[i].Registration.replace('https://android.googleapis.com/gcm/send/', ''));
+                  
+              }
+          }
+      }
+        callback(returnResults);
+    });
 }
