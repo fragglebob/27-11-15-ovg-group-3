@@ -111,9 +111,9 @@ function subscribe() {
 }
 
 function sendSubscriptionToServer(subscription) {
-  $.post('http://vps98649.ovh.net/api/registration_id', {
+  $.post('/api/registration_id', {
     registration_id: subscription
   }, function(data){
-    
+
   });
 }
