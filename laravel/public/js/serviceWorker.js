@@ -116,5 +116,5 @@ function sendSubscriptionToServer(subscription) {
   //  registration_id: subscription
   //}, function(data){
 
-  });
+  //});
 }
