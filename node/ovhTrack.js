@@ -173,15 +173,17 @@ function storeTrendingWord(tonedWord, positive) {
           if(results.length > 0) {
 //              var mysqlQuery = 'UPDATE Trending SET Size = :size WHERE Trend = :trend';
               var mysqlQuery = 'UPDATE Trending SET Size = ? WHERE Trend = ?';
-                var sqlll = connection.query(mysqlQuery, [parseInt(allValues.Size), tonedWord.word], function(err, result) {
-                  if (err) {
-                      console.log("It was err 2");
-                      console.log(err);
-                  } else {
-                      console.log("Updated trend!");
-                  }
-                });
-              console.log(sqlll.sql);
+              if (parseInt(allValues.Size) !== parseInt(results[0].Size)) {
+                    var sqlll = connection.query(mysqlQuery, [parseInt(allValues.Size), tonedWord.word], function(err, result) {
+                      if (err) {
+                          console.log("It was err 2");
+                          console.log(err);
+                      } else {
+                          console.log("Updated trend!");
+                      }
+                    });
+                  console.log(sqlll.sql);
+              }
           } else {
                 var mysqlQuery = 'INSERT INTO Trending SET ?';
                 var otherSql = connection.query(mysqlQuery, allValues, function(err, rows, fields) {
