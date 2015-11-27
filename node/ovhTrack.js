@@ -140,7 +140,7 @@ function processTrends(pos, neg) {
         }
     }
     for(var i = 0; i < pos.length; i++) {
-        if(pos[i].count >= 5 && i < 5) {
+        if(pos[i].count >= 5 && i < 10) {
             storeTrendingWord(pos[i], true);
         }
     } 
