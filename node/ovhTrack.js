@@ -48,6 +48,7 @@ function insertTweetToMysql(tweet) {
           console.log(err);
       } else {
           console.log("Inserted tweet");
+      }
     });
 }
 
