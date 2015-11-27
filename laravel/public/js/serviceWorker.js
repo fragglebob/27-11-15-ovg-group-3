@@ -111,10 +111,10 @@ function subscribe() {
 }
 
 function sendSubscriptionToServer(subscription) {
-  console.log(subscription);
-  //$.post('/api/registration_id', {
-  //  registration_id: subscription
-  //}, function(data){
+  //console.log(subscription);
+  $.post('/api/registration_id', {
+    registration_id: subscription.endpoint
+  }, function(data){
 
-  //});
+  });
 }
