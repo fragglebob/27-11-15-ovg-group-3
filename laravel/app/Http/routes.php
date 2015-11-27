@@ -38,9 +38,11 @@ Route::group(['middleware' => 'cors'], function(\Illuminate\Routing\Router $rout
         $id = \Illuminate\Support\Facades\Input::get('registration_id');
 
         if($id) {
-            $reg = new \App\Registration();
-            $reg->Registration = $id;
-            $reg->save();
+            if(\App\Registration::where('Registration', $id)->count() == 0) {
+                $reg = new \App\Registration();
+                $reg->Registration = $id;
+                $reg->save();
+            }
         }
 
         return ['status' => true];
