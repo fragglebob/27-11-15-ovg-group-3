@@ -33,6 +33,19 @@ Route::group(['middleware' => 'cors'], function(\Illuminate\Routing\Router $rout
         ];
 
     });
+
+    $router->post('api/registration_id', function(){
+        $id = \Illuminate\Support\Facades\Input::get('registration_id');
+
+        if($id) {
+            $reg = new \App\Registration();
+            $reg->Registration = $id;
+            $reg->save();
+        }
+
+        return ['status' => true];
+    });
+
 });
 
 
