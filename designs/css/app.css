@@ -126,3 +126,26 @@ a {
       content: "";
       clear: both;
       display: table; }
+
+.trends {
+  margin: 0 0 0.9735rem; }
+  .trends li {
+    padding: 0;
+    list-style: none; }
+    .trends li .number {
+      margin-right: 15px;
+      border-radius: 20px;
+      display: inline-block;
+      padding: 5px;
+      color: white; }
+  .trends.pos li .number {
+    background-color: #18406b; }
+  .trends.neg li .number {
+    background-color: #e7bf94; }
+
+button {
+  padding: 15px 25px;
+  background-color: #18406b;
+  color: white; }
+  button:hover {
+    background-color: #133456; }

@@ -189,3 +189,38 @@ a {
 		}
 	}
 }
+
+.trends {
+	margin: 0 0 $basePadding;
+
+	li {
+		padding: 0;
+		list-style: none;
+		
+		.number {
+			margin-right: 15px;
+			border-radius: 20px;
+			display: inline-block;
+			padding: 5px;
+			color: white;
+		}
+	}
+
+	&.pos li .number {
+		background-color: $blueish;
+	}
+
+	&.neg li .number {
+		background-color: invert($blueish);
+	}
+}
+
+button {
+	padding: 15px 25px;
+	background-color: $blueish;
+	color: white;
+
+	&:hover {
+		background-color: darken($blueish,5);
+	}
+}
