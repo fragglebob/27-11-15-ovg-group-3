@@ -194,7 +194,7 @@ a {
 	margin: 0 0 $basePadding;
 
 	li {
-		padding: 0;
+		padding: 0 0 10px;
 		list-style: none;
 		
 		.number {
@@ -203,6 +203,7 @@ a {
 			display: inline-block;
 			padding: 5px;
 			color: white;
+			width: 30px;
 		}
 	}
 

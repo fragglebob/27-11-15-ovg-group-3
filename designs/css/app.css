@@ -130,14 +130,15 @@ a {
 .trends {
   margin: 0 0 0.9735rem; }
   .trends li {
-    padding: 0;
+    padding: 0 0 10px;
     list-style: none; }
     .trends li .number {
       margin-right: 15px;
       border-radius: 20px;
       display: inline-block;
       padding: 5px;
-      color: white; }
+      color: white;
+      width: 30px; }
   .trends.pos li .number {
     background-color: #18406b; }
   .trends.neg li .number {

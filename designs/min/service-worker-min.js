@@ -1,0 +1,1 @@
+self.addEventListener("push",function(i){console.log("Received a push message",i);var e="Trending notification.",n="A new topic has been spoted trending.",o="/images/icon-192x192.png",t="simple-push-demo-notification-tag";i.waitUntil(self.registration.showNotification(e,{body:n,icon:o,tag:t}))});

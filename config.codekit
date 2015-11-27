@@ -54,6 +54,17 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
+	"\/designs\/images\/icon-192x192.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5363,
+		"inputAbbreviatedPath": "\/designs\/images\/icon-192x192.png",
+		"outputAbbreviatedPath": "\/designs\/images\/icon-192x192.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/designs\/index.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -96,6 +107,28 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/designs\/js\/min\/serviceWorker-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/designs\/js\/min\/serviceWorker-min.js",
+		"outputAbbreviatedPath": "\/designs\/js\/min\/min\/serviceWorker-min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/designs\/js\/serviceWorker.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/designs\/js\/serviceWorker.js",
+		"outputAbbreviatedPath": "\/designs\/js\/min\/serviceWorker-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 0
+		},
 	"\/designs\/js\/vendor\/jquery.min.js": {
 		"fileType": 64,
 		"ignore": 1,
@@ -117,6 +150,39 @@
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
+		},
+	"\/designs\/manifest.json": {
+		"fileType": 524288,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/designs\/manifest.json",
+		"orderOutput": 0,
+		"outputAbbreviatedPath": "\/designs\/manifest-min.json",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1
+		},
+	"\/designs\/min\/service-worker-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/designs\/min\/service-worker-min.js",
+		"outputAbbreviatedPath": "\/designs\/min\/min\/service-worker-min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/designs\/service-worker.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/designs\/service-worker.js",
+		"outputAbbreviatedPath": "\/designs\/min\/service-worker-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 0
 		},
 	"\/laravel\/app\/Console\/Commands\/Inspire.php": {
 		"fileType": 8192,
@@ -303,6 +369,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/laravel\/app\/Providers\/RouteServiceProvider.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/laravel\/app\/Registration.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/laravel\/app\/Registration.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
