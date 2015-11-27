@@ -28,10 +28,9 @@ Route::group(['middleware' => 'cors'], function(\Illuminate\Routing\Router $rout
     $router->get('api/trending', function () {
 
         return [
-            "positive" => ['Server', "Ducks", "Robots"],
-            "negative" => ['Domains', 'SSL']
+            "positive" => \App\Trend::where('Ongoing', 1)->orderBy('size', 'desc')->where('Tone', '>', 0)->take(3)->get(['Trend', 'Size']),
+            "negative" => \App\Trend::where('Ongoing', 1)->orderBy('size', 'desc')->where('Tone', '<', 0)->take(3)->get(['Trend', 'Size'])
         ];
-
 
     });
 });
