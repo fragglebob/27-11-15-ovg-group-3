@@ -418,9 +418,10 @@ button {
   line-height: 1; }
 
 .row {
-  max-width: 62.5remrem;
+  max-width: 62.5rem;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  }
   .row::before, .row::after {
     content: ' ';
     display: table; }
@@ -2316,7 +2317,8 @@ select {
 
 html,
 body {
-  height: 100%; }
+  /* height: 100%; */
+  }
 
 .off-canvas-wrapper {
   width: 100%;

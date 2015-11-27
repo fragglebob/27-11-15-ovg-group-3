@@ -1,0 +1,35 @@
+body {
+  background: #e4e4e4; }
+
+h1, h2, h3, h4, h5, h6, p, ul, ol, li {
+  color: #2b292a; }
+
+a {
+  color: #59aa99; }
+  a:hover {
+    color: #2d574e; }
+
+.container {
+  max-width: 65rem;
+  margin: 100px auto 0;
+  background: white;
+  min-height: calc(100vh - 100px);
+  padding: 0.9735rem; }
+  .container :before {
+    width: 100vw;
+    z-index: -1;
+    height: 200px;
+    background: #18406b;
+    position: absolute;
+    top: 0;
+    right: 0; }
+
+.tweets {
+  border: 1px solid #2b292a;
+  padding: 0.9735rem;
+  margin: 0;
+  background: #f1f1f1; }
+  .tweets .tweet {
+    list-style: none;
+    border-bottom: 1px solid #2b292a;
+    padding-bottom: 0.9735rem; }
