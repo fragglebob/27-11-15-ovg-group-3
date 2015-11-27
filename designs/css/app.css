@@ -37,7 +37,8 @@ a {
     list-style: none;
     border-bottom: 1px solid #2b292a;
     padding-bottom: 0.9735rem;
-    margin-bottom: 0.9735rem; }
+    margin-bottom: 0.9735rem;
+    position: relative; }
     .tweets .tweet:last-of-type {
       border-bottom: none;
       padding-bottom: 0;
@@ -84,6 +85,43 @@ a {
         font-size: 2rem;
         font-weight: 600;
         line-height: 1; }
+    .tweets .tweet .tone {
+      display: block;
+      position: absolute;
+      font-size: 0.75rem;
+      color: white;
+      padding: 0 15px;
+      top: -5px;
+      right: 165px; }
+      .tweets .tweet .tone:before {
+        content: "";
+        display: block;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 0 5px 5px;
+        position: absolute;
+        left: -5px; }
+      .tweets .tweet .tone.tone-neutral {
+        background: #424242; }
+        .tweets .tweet .tone.tone-neutral:before {
+          border-color: transparent transparent #0f0f0f transparent; }
+      .tweets .tweet .tone.tone-good {
+        background: #18406b; }
+        .tweets .tweet .tone.tone-good:before {
+          border-color: transparent transparent #050e18 transparent; }
+      .tweets .tweet .tone.tone-bad {
+        background: #e7bf94; }
+        .tweets .tweet .tone.tone-bad:before {
+          border-color: transparent transparent #d48d41 transparent; }
+    .tweets .tweet:before {
+      content: "";
+      width: 125px;
+      height: 1px;
+      background: #2b292a;
+      position: absolute;
+      top: 0px;
+      right: 160px; }
     .tweets .tweet:after {
       content: "";
       clear: both;
