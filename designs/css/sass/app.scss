@@ -1,0 +1,54 @@
+$blueish: #18406b;
+$offWhite: #f1f1f1;
+$greenish: #59aa99;
+$blackish: #2b292a;
+$grey: #4c4c4c;
+
+$basePadding: 0.9735rem;
+
+body {
+	background: darken($offWhite, 5);
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, ol, li {
+	color: $blackish;
+}
+
+a {
+	color: $greenish;
+
+	&:hover {
+		color: darken($greenish, 25);
+	}
+}
+
+.container {
+	max-width: 65rem;
+	margin: 100px auto 0;
+	background: white;
+	min-height: calc(100vh - 100px);
+	padding: $basePadding;
+	
+	& :before {
+		width: 100vw;
+		z-index: -1;
+		height: 200px;
+		background: $blueish;
+		position: absolute;
+		top: 0; right: 0;
+	}
+}
+
+
+.tweets {
+	border: 1px solid $blackish;
+	padding: $basePadding;
+	margin: 0;
+	background: $offWhite;
+	
+	.tweet {
+		list-style: none;
+		border-bottom: 1px solid $blackish;
+		padding-bottom: $basePadding;
+	}
+}
