@@ -57,6 +57,7 @@ a {
 		border-bottom: 1px solid $blackish;
 		padding-bottom: $basePadding;
 		margin-bottom: $basePadding;
+		position: relative;
 
 		&:last-of-type {
 			border-bottom: none;
@@ -124,6 +125,62 @@ a {
 				}
 			}
 		}
+
+		.tone {
+			display: block;
+			position: absolute;
+			font-size: 0.75rem;
+			color: white;
+			padding: 0 15px;
+			top: -5px;
+			right: 165px;
+
+
+			&:before {
+				content: "";
+				display: block;
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 0 0 5px 5px;
+				position: absolute;
+				left: -5px;
+			}
+			
+
+			&.tone-neutral {
+				background: grayscale($blueish);
+
+				&:before {
+					border-color: transparent transparent darken(grayscale($blueish),20) transparent;
+				}
+			}
+			&.tone-good {
+				background: $blueish;
+				
+				&:before {
+					border-color: transparent transparent darken($blueish,20) transparent;
+				}
+			}
+			&.tone-bad {
+				background: invert($blueish);
+
+				&:before {
+					border-color: transparent transparent darken(invert($blueish),20) transparent;
+				}
+			}
+		}
+
+		&:before {
+			content: "";
+			width: 125px;
+			height: 1px;
+			background: $blackish;
+			position: absolute;
+			top: 0px;
+			right: 160px;
+		}
+		
 
 		&:after {
 			content: "";
