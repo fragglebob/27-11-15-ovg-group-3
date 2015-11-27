@@ -24,4 +24,16 @@ Route::group(['middleware' => 'cors'], function(\Illuminate\Routing\Router $rout
             return App\Message::orderBy('id', 'desc')->take($size)->get();
         }
     });
+
+    $router->get('api/trending', function () {
+
+        return [
+            "positive" => ['Server', "Ducks", "Robots"],
+            "negative" => ['Domains', 'SSL']
+        ];
+
+
+    });
 });
+
+
