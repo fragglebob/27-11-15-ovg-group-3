@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Route::group(['middleware' => 'cors'], function(\Illuminate\Routing\Router $router){
     $router->get('api/messages', function () {
-        $size = 20;
+        $size = 10;
         if($since = \Illuminate\Support\Facades\Input::get('since_id', false)) {
             return App\Message::orderBy('id', 'asc')->take($size)->where('id', '>', $since)->get();
         } else {
