@@ -9,7 +9,7 @@ var twtterString = "";
 var locString = "";
 
 function firstFetch() {
-	$.getJSON('http://vps98649.ovh.net/api/trending/').done(function(data) {
+	$.getJSON('/api/trending/').done(function(data) {
 		var pos = data.positive;
 		var neg = data.negative;
 
@@ -23,7 +23,7 @@ function firstFetch() {
 		
 	});
 
-	$.getJSON('http://vps98649.ovh.net/api/messages/').done(function(data) {
+	$.getJSON('/api/messages/').done(function(data) {
 		for (var i = data.length - 1; i >= 0; i--) {
 			$('ul.tweets').prepend(buildTweet(data[i])); 
 		};
@@ -37,7 +37,7 @@ function firstFetch() {
 function addNew() {
 	
 
-	$.getJSON('http://vps98649.ovh.net/api/trending/').done(function(data) {
+	$.getJSON('/api/trending/').done(function(data) {
 
 		$("ul.trends").empty();
 		var pos = data.positive;
@@ -53,7 +53,7 @@ function addNew() {
 		
 	});
 
-	$.getJSON('http://vps98649.ovh.net/api/messages/?since_id='+lastID).done(function(data) {
+	$.getJSON('/api/messages/?since_id='+lastID).done(function(data) {
 		for (var i = 0 , len = data.length; i < len; i++) {
 			$('ul.tweets li:last-of-type').remove();
 			$('ul.tweets').prepend(buildTweet(data[i]));
