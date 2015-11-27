@@ -14,4 +14,6 @@ use Illuminate\Database\Eloquent\Model;
 class Registration extends Model
 {
     public $table = "Registrations";
+
+    public $timestamps = false;
 }
